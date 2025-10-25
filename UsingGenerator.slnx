@@ -1,0 +1,26 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/UsingGenerator.Abstractions/UsingGenerator.Abstractions.csproj" />
+    <Project Path="src/UsingGenerator.Generator/UsingGenerator.Generator.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/UsingGenerator.Sample.Library/UsingGenerator.Sample.Library.csproj" />
+    <Project Path="samples/UsingGenerator.Sample/UsingGenerator.Sample.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/UsingGenerator.Tests/UsingGenerator.Tests.csproj" />
+  </Folder>
+  <!-- Consumed through the local NuGet feed that run.ps1 builds, so not solution projects. -->
+  <Folder Name="/tests/Packaging/">
+    <File Path="tests/Packaging/NuGet.config" />
+    <File Path="tests/Packaging/run.ps1" />
+  </Folder>
+</Solution>

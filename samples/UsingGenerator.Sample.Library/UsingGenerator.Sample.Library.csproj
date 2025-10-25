@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Declaring a bundle only needs the attributes; the generator runs in consuming projects. -->
+    <ProjectReference Include="..\..\src\UsingGenerator.Abstractions\UsingGenerator.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

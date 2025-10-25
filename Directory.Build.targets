@@ -1,0 +1,14 @@
+<Project>
+
+  <PropertyGroup>
+    <!--
+      Generated sources on disk, for inspection and for the packaging test's assertions.
+      This lives in .targets, not .props: BaseIntermediateOutputPath is not set yet when
+      Directory.Build.props is evaluated, and an empty value would drop the generated files in
+      the project root, where the default globs would compile them a second time.
+    -->
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)GeneratedFiles</CompilerGeneratedFilesOutputPath>
+  </PropertyGroup>
+
+</Project>

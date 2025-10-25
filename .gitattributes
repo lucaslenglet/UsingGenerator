@@ -1,0 +1,17 @@
+# Let Git normalize line endings; the working tree gets the platform's native form.
+* text=auto
+
+*.cs        text diff=csharp
+*.csproj    text
+*.props     text
+*.targets   text
+*.slnx      text
+*.json      text
+*.md        text
+*.yml       text
+
+# Scripts run through pwsh, which handles either ending; keep them stable in the repo.
+*.ps1       text eol=lf
+
+*.png       binary
+*.nupkg     binary

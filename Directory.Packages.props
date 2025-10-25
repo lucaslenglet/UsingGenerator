@@ -1,0 +1,26 @@
+<Project>
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The generator compiles against this Roslyn; the tests host a driver from it. They must
+         move together, or the tests exercise a different API surface than the one shipped. -->
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageVersion Include="xunit" Version="2.9.2" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Resolved from the local feed that tests/Packaging/run.ps1 builds. -->
+    <PackageVersion Include="UsingGenerator" Version="$(UsingGeneratorVersion)" />
+    <PackageVersion Include="Demo.Bundles" Version="$(DemoBundlesVersion)" />
+  </ItemGroup>
+
+</Project>

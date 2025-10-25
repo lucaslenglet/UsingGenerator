@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>UsingGenerator</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>UsingGenerator</PackageId>
+    <Version>$(UsingGeneratorVersion)</Version>
+    <Authors>Lucas Lenglet</Authors>
+    <Description>Declare reusable bundles of global usings as attributes, and apply them to any assembly with a single line.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>global-using;usings;source-generator;roslyn;analyzer</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      Built as part of this project's build, but never referenced: the generator ships as an
+      analyzer, not as an API. OutputItemType puts its path in @(Analyzer) for the pack target.
+    -->
+    <ProjectReference Include="..\UsingGenerator.Generator\UsingGenerator.Generator.csproj"
+                      OutputItemType="Analyzer"
+                      PrivateAssets="all"
+                      ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!--
+    Places the generator under analyzers/dotnet/cs so Roslyn loads it, while this project's own
+    assembly (the attributes) goes to lib/ as a normal reference. One package, two roles.
+    @(Analyzer) also holds the SDK's own analyzers, hence the filter.
+  -->
+  <Target Name="PackGeneratorAsAnalyzer"
+          BeforeTargets="_GetPackageFiles"
+          DependsOnTargets="ResolveProjectReferences">
+    <ItemGroup>
+      <None Include="@(Analyzer)"
+            Condition="'%(Filename)' == 'UsingGenerator.Generator'"
+            Pack="true"
+            PackagePath="analyzers/dotnet/cs"
+            Visible="false" />
+    </ItemGroup>
+  </Target>
+
+</Project>

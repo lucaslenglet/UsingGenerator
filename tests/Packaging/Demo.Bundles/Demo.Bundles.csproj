@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Version>$(DemoBundlesVersion)</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      Deliberately left at the default PrivateAssets. The point of this test is that a library
+      publishing a bundle needs no special setting for its consumers to get the generator.
+      Setting PrivateAssets="all" here breaks them: it also hides the attributes (CS0012).
+    -->
+    <PackageReference Include="UsingGenerator" />
+  </ItemGroup>
+
+</Project>

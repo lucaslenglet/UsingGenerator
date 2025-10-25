@@ -1,0 +1,16 @@
+<Project>
+
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <ImplicitUsings>disable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Single source of truth: the package version, the packaging test and run.ps1 all read it. -->
+    <UsingGeneratorVersion Condition="'$(UsingGeneratorVersion)' == ''">0.1.0-local.1</UsingGeneratorVersion>
+    <DemoBundlesVersion Condition="'$(DemoBundlesVersion)' == ''">1.0.0-local.1</DemoBundlesVersion>
+  </PropertyGroup>
+
+</Project>
