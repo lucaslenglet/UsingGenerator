@@ -10,7 +10,7 @@ type that ships in a NuGet package.
 ## Install
 
 ```
-dotnet add package UsingGenerator
+dotnet add package lucaslgt.UsingGenerator
 ```
 
 The package carries both the attributes and the source generator.

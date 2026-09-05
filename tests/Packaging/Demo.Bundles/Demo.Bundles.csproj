@@ -11,7 +11,7 @@
       publishing a bundle needs no special setting for its consumers to get the generator.
       Setting PrivateAssets="all" here breaks them: it also hides the attributes (CS0012).
     -->
-    <PackageReference Include="UsingGenerator" />
+    <PackageReference Include="lucaslgt.UsingGenerator" />
   </ItemGroup>
 
 </Project>

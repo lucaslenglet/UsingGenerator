@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>UsingGenerator</PackageId>
+    <PackageId>lucaslgt.UsingGenerator</PackageId>
     <Version>$(UsingGeneratorVersion)</Version>
     <Authors>Lucas Lenglet</Authors>
     <Description>Declare reusable bundles of global usings as attributes, and apply them to any assembly with a single line.</Description>
