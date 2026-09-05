@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <!-- Resolved from the local feed that tests/Packaging/run.ps1 builds. -->
-    <PackageVersion Include="UsingGenerator" Version="$(UsingGeneratorVersion)" />
+    <PackageVersion Include="lucaslgt.UsingGenerator" Version="$(UsingGeneratorVersion)" />
     <PackageVersion Include="Demo.Bundles" Version="$(DemoBundlesVersion)" />
   </ItemGroup>
 

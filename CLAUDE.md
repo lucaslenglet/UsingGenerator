@@ -63,7 +63,7 @@ The generator must target netstandard2.0 to be loadable by Roslyn. Consequences:
 
 ## Packaging
 
-`src/UsingGenerator.Abstractions` is the packaging project (`PackageId` is `UsingGenerator`): its own
+`src/UsingGenerator.Abstractions` is the packaging project (`PackageId` is `lucaslgt.UsingGenerator`; the namespaces stay `UsingGenerator`): its own
 assembly goes to `lib/`, and `PackGeneratorAsAnalyzer` packs the generator to `analyzers/dotnet/cs`
 from the `@(Analyzer)` item that its `ProjectReference` populates.
 
