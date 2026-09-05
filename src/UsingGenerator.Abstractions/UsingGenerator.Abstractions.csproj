@@ -12,6 +12,9 @@
     <Description>Declare reusable bundles of global usings as attributes, and apply them to any assembly with a single line.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>global-using;usings;source-generator;roslyn;analyzer</PackageTags>
+    <PackageProjectUrl>https://github.com/lucaslenglet/UsingGenerator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/lucaslenglet/UsingGenerator</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
