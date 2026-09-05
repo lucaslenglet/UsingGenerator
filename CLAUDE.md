@@ -91,3 +91,16 @@ anything.
 - `Directory.Packages.props` — central package management. The Roslyn version is shared by the
   generator and the tests on purpose; bumping one alone makes the tests exercise a different API
   surface than the one shipped.
+
+## Release
+
+Pushing a `v*` tag runs `.github/workflows/release.yml`: the tag is the only source of the published
+version (`v1.2.3` -> `1.2.3`), so nothing in the repo is bumped to release. The workflow packs at
+that version through `run.ps1`, and pushes **that same validated artifact** to nuget.org — never a
+separately packed one.
+
+Publishing uses nuget.org trusted publishing (OIDC), not a stored API key. The job needs
+`id-token: write`, and the `NuGet/login@v1` step must stay immediately before the push: it trades
+one OIDC token for one API key valid for a single hour. The only repository secret is `NUGET_USER`
+(the nuget.org profile name). The matching policy lives on nuget.org and names the repository owner,
+the repository, and the workflow file name alone — `release.yml`, without its directory.
