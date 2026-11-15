@@ -11,6 +11,10 @@
     <Authors>Lucas Lenglet</Authors>
     <Description>Declare reusable bundles of global usings as attributes, and apply them to any assembly with a single line.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT-0</PackageLicenseExpression>
+    <!-- The release workflow points ReleaseNotesFile (as an environment variable, which MSBuild
+         reads as a property) at the CHANGELOG.md section of the version being published. -->
+    <PackageReleaseNotes Condition="'$(ReleaseNotesFile)' != '' And Exists('$(ReleaseNotesFile)')">$([System.IO.File]::ReadAllText('$(ReleaseNotesFile)'))</PackageReleaseNotes>
     <PackageTags>global-using;usings;source-generator;roslyn;analyzer</PackageTags>
     <PackageProjectUrl>https://github.com/lucaslenglet/UsingGenerator</PackageProjectUrl>
     <RepositoryUrl>https://github.com/lucaslenglet/UsingGenerator</RepositoryUrl>
