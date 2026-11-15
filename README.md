@@ -1,5 +1,10 @@
 # UsingGenerator
 
+[![NuGet](https://img.shields.io/nuget/v/lucaslgt.UsingGenerator?logo=nuget)](https://www.nuget.org/packages/lucaslgt.UsingGenerator)
+[![Downloads](https://img.shields.io/nuget/dt/lucaslgt.UsingGenerator)](https://www.nuget.org/packages/lucaslgt.UsingGenerator)
+[![CI](https://github.com/lucaslenglet/UsingGenerator/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/lucaslenglet/UsingGenerator/actions/workflows/ci.yml)
+[![License: MIT-0](https://img.shields.io/github/license/lucaslenglet/UsingGenerator)](https://github.com/lucaslenglet/UsingGenerator/blob/main/LICENSE)
+
 Declare a set of `global using` directives once, then apply it to any assembly with a single line.
 
 C# 10 gave us `global using`, but no way to share one set of imports across projects. The usual
@@ -116,4 +121,7 @@ transitive consumer — the thing most likely to break silently when the packagi
 
 ## License
 
-Not yet chosen; the code is all rights reserved until one is added.
+[MIT-0](https://github.com/lucaslenglet/UsingGenerator/blob/main/LICENSE): use it however you like, no attribution required.
+
+This project does not accept contributions; see [CONTRIBUTING.md](https://github.com/lucaslenglet/UsingGenerator/blob/main/CONTRIBUTING.md).
+Changes are listed in [CHANGELOG.md](https://github.com/lucaslenglet/UsingGenerator/blob/main/CHANGELOG.md).
